@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Luca's polygon generator</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script type="text/javascript" src="luca-regular-polygon-generator.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+  <h2>Demo</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-4">
+        Width:
+        <input id="width" type="number" min="0" value="0">
+      </div>
+      <div class="col-xs-4">
+        Height:
+        <input id="height" type="number" min="0" value="0">
+      </div>
+      <div class="col-xs-4">
+        Fill:
+        <select id="fill">
+          <option>Black</option>
+          <option>Blue</option>
+          <option>Green</option>
+          <option>Yellow</option>
+          <option>Red</option>
+          <option>Elephant</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4">
+        Rotation:
+        <input id="rotation" type="number" min="0" max="359" value="0">
+      </div>
+      <div class="col-xs-4">
+        <select id="key">
+          <option>Radius</option>
+          <option>Side length</option>
+        </select>:
+        <input id="value" type="number" min="0" value="100">
+      </div>
+      <div class="col-xs-4">
+        Sides:
+        <input id="sides" type="number" min="3" value="3">
+      </div>
+    </div>
+    </div>
+    <div id="polygon"></div>
+      <h2>Instructions</h2>
+      <ol>
+        <li>Call luca-regular-polygon-generator.js from your HTML code.</li>
+        <li>Call luca.insertPolygon to insert a regular polygon.</li>
+      </ol>
+    </div>
+  <div>
+  <h2>Syntax</h2>
+  <div>
+    <code>luca.insertPolygon(options);</code>
+  </div>
+  <div>
+    where <code>options</code> is an object with the following properties:
+  </div>
+  <ul>
+    <li>number <code>canvasHeight</code> (defaults to fit the polygon's height): the polygon is drawn in a &lt;canvas&gt; whose height will be this value (this value must be positive)</li>
+    <li>number <code>canvasWidth</code> (defaults to fit the polygon's width): the polygon is drawn in a &lt;canvas&gt; whose width will be this value (this value must be positive)</li>
+    <li>(<!--CanvasGradient or -->HTMLImageElement or string) <code>fill</code> (defaults to "black"): the CSS color value, image or gradient that will fill the polygon</li>
+    <li>number <code>rotation</code> (defaults to 0): the rotation angle of the polygon, in a clockwise direction (if the rotation property is 0, one of the hexagon's corners will be pointing to the rigth)</li>
+    <li>number <code>radius</code> (required unless you specify the sideLength property): the distance between the polygon's center and its corners (overrides the sideLength property if both are specified)</li>
+    <li>number <code>sideLength</code> (required unless you specify the radius property): the distance between a corner and the nearest corners</li>
+    <li>number <code>sides</code> (defaults to 3): the number of sides of the polygon</li>
+    <li>HTMLElement <code>where</code> (defaults to document.body): the polygon's parent element</li>
+  </ul>
+</body>
+</html>
